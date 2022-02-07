@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import CoverImg from '../assets/cinema-cover.jpg';
 
 const RegisterContainer = styled.div`
     width: 100%;
@@ -8,7 +9,16 @@ const RegisterContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
+    img {
+        height: 50%;
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
     h1 {
         font-size: 2.5rem;
         color: var(--red);
@@ -27,7 +37,7 @@ const RegisterContainer = styled.div`
     button {
         width: 300px;
         height: 50px;
-        border: 1px solid var(--secondaryColor);
+        border: none;
         border-radius: 5px;
         font-size: 1.2rem;
         margin: .5rem 0;
@@ -52,6 +62,7 @@ const RegisterContainer = styled.div`
 function Register() {
     return (
         <RegisterContainer>
+            <img src={CoverImg} alt="MovieHub" />
             <h1>MovieHub</h1>
             <form>
                 <div>
