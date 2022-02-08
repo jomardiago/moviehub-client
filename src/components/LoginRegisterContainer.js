@@ -26,7 +26,7 @@ const LoginRegisterContainer = styled.div`
         width: 300px;
         height: 50px;
         margin: .5rem 0;
-        border: 2px solid var(--primaryColor);
+        border: 2px solid var(--red);
         padding: 0 1rem;
         border-radius: 5px;
         font-size: 1.2rem;
@@ -43,7 +43,7 @@ const LoginRegisterContainer = styled.div`
         font-weight: 500;
         background-color: var(--red);
         cursor: pointer;
-        color: var(--secondaryColor);
+        color: var(--white);
     }
 
     p {

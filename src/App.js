@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -7,6 +7,7 @@ import Register from './pages/Register';
 
 function App() {
   const [ theme, setTheme ] = useState('light-theme');
+  const isAuthenticated = false;
 
   useEffect(() => {
     document.documentElement.className = theme;
@@ -20,7 +21,7 @@ function App() {
     <>
       <Header toggleTheme={toggleTheme} theme={theme} isAuthenticated={false} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace={true} /> } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

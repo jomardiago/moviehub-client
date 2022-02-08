@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import LoginRegisterContainer from '../components/LoginRegisterContainer';
 import CoverImg from '../assets/cinema-cover.jpg';

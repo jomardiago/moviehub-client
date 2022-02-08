@@ -2,21 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     :root {
-        --lightPrimaryColor: #000000;
-        --lightSecondaryColor: #FFFFFF;
-        --darkPrimaryColor: #FFFFFF;
-        --darkSecondaryColor: #000000;
+        --black: #000000;
+        --white: #FFFFFF;
         --red: #ef4444;
-    }
-
-    .dark-theme {
-        --primaryColor: var(--darkPrimaryColor);
-        --secondaryColor: var(--darkSecondaryColor);
-    }
-
-    .light-theme {
-        --primaryColor: var(--lightPrimaryColor);
-        --secondaryColor: var(--lightSecondaryColor);
     }
 
     * {
@@ -27,8 +15,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        color: var(--primaryColor);
-        background-color: var(--secondaryColor);
+        color: var(--black);
+        background-color: var(--white);
         font-size: 1em;
         font-family: 'Poppins', sans-serif;
     }
