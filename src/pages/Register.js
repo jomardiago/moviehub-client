@@ -1,25 +1,63 @@
-import styled from 'styled-components';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginRegisterContainer from '../components/LoginRegisterContainer';
 import CoverImg from '../assets/cinema-cover.jpg';
 
 function Register() {
+    const [username, setUsername] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [confirmPassword, setConfirmPassword] = React.useState('');
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log({ username, password, confirmPassword, email });
+    };
+
     return (
         <LoginRegisterContainer>
             <img src={CoverImg} alt="MovieHub" />
             <h1>MovieHub</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <input type="text" placeholder="Username" />
+                    <input 
+                        id="username"
+                        name="username" 
+                        type="text" 
+                        placeholder="Username" 
+                        value={username} 
+                        onChange={e => setUsername(e.target.value)} 
+                    />
                 </div>
                 <div>
-                    <input type="text" placeholder="Email" />
+                    <input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        placeholder="Email" 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} 
+                    />
                 </div>
                 <div>
-                    <input type="password" placeholder="Password" />
+                    <input 
+                        id="password" 
+                        name="password" 
+                        type="password" 
+                        placeholder="Password" 
+                        value={password} 
+                        onChange={e => setPassword(e.target.value)} 
+                    />
                 </div>
                 <div>
-                    <input type="password" placeholder="Confirm Password" />
+                    <input 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        type="password" 
+                        placeholder="Confirm Password" 
+                        value={confirmPassword} 
+                        onChange={e => setConfirmPassword(e.target.value)} 
+                    />
                 </div>
                 <div>
                     <button>Register</button>
