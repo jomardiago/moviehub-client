@@ -24,17 +24,20 @@ const HeaderContainer = styled.header`
 
 function Header({ isAuthenticated }) {
     const { logout } = React.useContext(AuthContext);
+
     return (
-        <HeaderContainer>
-            {isAuthenticated && (
-                <>
-                    <h1>MovieHub</h1>
-                    <div className="header-controls">
-                        <button onClick={logout}>Logout</button>
-                    </div>
-                </>
-            )}
-        </HeaderContainer>
+        <React.Fragment>
+            {
+                isAuthenticated && (
+                    <HeaderContainer>
+                        <h1>MovieHub</h1>
+                        <div className="header-controls">
+                            <button onClick={logout}>Logout</button>
+                        </div>
+                    </HeaderContainer>
+                )
+            }
+        </React.Fragment>
     );
 }
 

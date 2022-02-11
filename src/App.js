@@ -14,9 +14,9 @@ function App() {
     <>
       <Header isAuthenticated={Object.keys(user).length > 0} />
       <Routes>
-        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" replace={true} /> } />
-        <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" replace={true} /> } />
-        <Route path="/register" element={!isAuthenticated ? <Register /> : <Navigate to="/" replace={true} /> } />
+        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" /> } />
+        <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" /> } />
+        <Route path="/register" element={!isAuthenticated ? <Register /> : <Navigate to="/" /> } />
       </Routes>
     </>
   );
