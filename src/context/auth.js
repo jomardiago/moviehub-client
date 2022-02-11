@@ -2,7 +2,7 @@ import React from 'react';
 import jwtDecode from 'jwt-decode';
 
 const initialState = {
-    user: null
+    user: {}
 };
 
 if (localStorage.getItem('token')) {
@@ -16,7 +16,7 @@ if (localStorage.getItem('token')) {
 }
 
 const AuthContext = React.createContext({
-    user: null,
+    user: {},
     login: () => {},
     logout: () => {}
 });

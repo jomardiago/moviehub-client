@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ApolloProvider from './providers/ApolloProvider';
+import { AuthProvider } from './context/auth';
 import GlobalStyles from './GlobalStyles';
 import App from './App';
 
@@ -10,7 +11,9 @@ ReactDOM.render(
     <GlobalStyles />
     <BrowserRouter>
       <ApolloProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>,

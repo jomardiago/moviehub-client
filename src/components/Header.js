@@ -1,34 +1,39 @@
+import React from 'react';
 import styled from 'styled-components';
+import { AuthContext } from '../context/auth';
 
 const HeaderContainer = styled.header`
-    color: var(--secondaryColor);
+    background-color: var(--red);
+    color: var(--white);
     height: 60px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 
-    button {
+    h1 {
+        margin-left: 1rem;
+        flex: 2;
+    }
+
+    .header-controls {
         margin-right: 1rem;
-        font-family: 'Poppins', sans-serif;
-        background-color: var(--red);
-        border: none;
-        color: var(--primary);
-        font-weight: 500;
-        width: 150px;
-        height: 40px;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
     }
 `;
 
-function Header({ toggleTheme, theme, isAuthenticated }) {
+function Header({ isAuthenticated }) {
+    const { logout } = React.useContext(AuthContext);
     return (
         <HeaderContainer>
-            {
-                isAuthenticated ? (
-                    <div>
-                        <button onClick={toggleTheme}>{ theme === 'light-theme' ? 'Lights Off' : 'Lights On' }</button>
+            {isAuthenticated && (
+                <>
+                    <h1>MovieHub</h1>
+                    <div className="header-controls">
+                        <button onClick={logout}>Logout</button>
                     </div>
-                ) : null
-            }
+                </>
+            )}
         </HeaderContainer>
     );
 }
