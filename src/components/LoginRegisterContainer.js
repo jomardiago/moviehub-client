@@ -55,6 +55,11 @@ const LoginRegisterContainer = styled.div`
         text-decoration: underline;
         font-weight: 600;
     }
+
+    .error {
+        color: red;
+        font-weight: 500;
+    }
 `;
 
 export default LoginRegisterContainer;

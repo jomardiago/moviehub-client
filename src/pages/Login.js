@@ -28,13 +28,13 @@ function Login() {
     const handleSubmit = e => {
         e.preventDefault();
         loginUser();
-    }
+    };
 
     return (
         <LoginRegisterContainer>
             <img src={CoverImg} alt="MovieHub" />
             <h1>MovieHub</h1>
-            { loading && <p>Loading...</p> }
+            { loading && !errors && <p>Loading...</p> }
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
@@ -44,6 +44,7 @@ function Login() {
                         placeholder="Username" 
                         onChange={e => setUsername(e.target.value)}
                     />
+                    { errors?.username && <p className="error">{ errors.username }</p> }
                 </div>
                 <div>
                     <input 
@@ -53,12 +54,13 @@ function Login() {
                         placeholder="Password" 
                         onChange={e => setPassword(e.target.value)}
                     />
+                    { errors?.password && <p className="error">{ errors.password }</p> }
                 </div>
+                { errors?.form && <p className="error">{ errors.form }</p> }
                 <div>
                     <button>Login</button>
                 </div>
             </form>
-            { Object.keys(errors).length > 0 && <div>{ JSON.stringify(errors) }</div> }
             <div>
                 <p>Not yet a member? <Link to="/register">Register</Link>.</p>
             </div>

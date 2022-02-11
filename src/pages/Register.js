@@ -37,7 +37,7 @@ function Register() {
         <LoginRegisterContainer>
             <img src={CoverImg} alt="MovieHub" />
             <h1>MovieHub</h1>
-            { loading && <p>Loading...</p> }
+            { loading && !errors && <p>Loading...</p> }
             <form onSubmit={handleSubmit}>
                 <div>
                     <input 
@@ -48,6 +48,7 @@ function Register() {
                         value={username} 
                         onChange={e => setUsername(e.target.value)} 
                     />
+                    { errors?.username && <p className="error">{ errors.username }</p> }
                 </div>
                 <div>
                     <input 
@@ -58,6 +59,7 @@ function Register() {
                         value={email} 
                         onChange={e => setEmail(e.target.value)} 
                     />
+                    { errors?.email && <p className="error">{ errors.email }</p> }
                 </div>
                 <div>
                     <input 
@@ -68,6 +70,7 @@ function Register() {
                         value={password} 
                         onChange={e => setPassword(e.target.value)} 
                     />
+                    { errors?.password && <p className="error">{ errors.password }</p> }
                 </div>
                 <div>
                     <input 
@@ -78,12 +81,12 @@ function Register() {
                         value={confirmPassword} 
                         onChange={e => setConfirmPassword(e.target.value)} 
                     />
+                    { errors?.confirmPassword && <p className="error">{ errors.confirmPassword }</p> }
                 </div>
                 <div>
                     <button>Register</button>
                 </div>
             </form>
-            { Object.keys(errors).length > 0 && <div>{ JSON.stringify(errors) }</div> }
             <div>
                 <p>Already a member? <Link to="/login">Login</Link>.</p>
             </div>
