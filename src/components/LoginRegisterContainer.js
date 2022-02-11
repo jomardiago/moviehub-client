@@ -26,7 +26,7 @@ const LoginRegisterContainer = styled.div`
         width: 300px;
         height: 50px;
         margin: .5rem 0;
-        border: 2px solid var(--red);
+        border: 2px solid var(--black);
         padding: 0 1rem;
         border-radius: 5px;
         font-size: 1.2rem;

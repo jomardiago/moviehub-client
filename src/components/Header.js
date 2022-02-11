@@ -10,15 +10,26 @@ const HeaderContainer = styled.header`
     align-items: center;
 
     h1 {
-        margin-left: 1rem;
+        margin-left: 2rem;
         flex: 2;
     }
 
     .header-controls {
-        margin-right: 1rem;
+        margin-right: 2rem;
         flex: 1;
         display: flex;
         justify-content: flex-end;
+    }
+
+    button {
+        padding .5rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--white);
+        cursor: pointer;
+        color: var(--red);
     }
 `;
 
