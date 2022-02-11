@@ -8,11 +8,11 @@ import Register from './pages/Register';
 
 function App() {
   const { user } = React.useContext(AuthContext);
-  const isAuthenticated = Object.keys(user).length > 0;
+  const isAuthenticated = user ? Object.keys(user).length > 0 : false;
 
   return (
     <>
-      <Header isAuthenticated={Object.keys(user).length > 0} />
+      <Header isAuthenticated={isAuthenticated} />
       <Routes>
         <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" /> } />
         <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" /> } />
