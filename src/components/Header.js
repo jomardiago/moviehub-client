@@ -8,6 +8,9 @@ const HeaderContainer = styled.header`
     height: 60px;
     display: flex;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
 
     h1 {
         margin-left: 2rem;
